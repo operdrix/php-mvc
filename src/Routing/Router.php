@@ -2,8 +2,14 @@
 
 namespace App\Routing;
 
+use Twig\Environment;
+
 class Router
 {
+  public function __construct(
+    private Environment $twig
+  ) {
+  }
   private array $routes = [];
 
   public function addRoute(
@@ -50,7 +56,7 @@ class Router
     $controller = $route['controller'];
     $method = $route['method'];
 
-    $controllerInstance = new $controller();
+    $controllerInstance = new $controller($this->twig);
     $controllerInstance->$method();
   }
 }

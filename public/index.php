@@ -7,6 +7,7 @@ use App\Controller\IndexController;
 use App\Routing\RouteNotFoundException;
 use App\Routing\Router;
 use Symfony\Component\Dotenv\Dotenv;
+use Twig\Loader\FilesystemLoader;
 
 $dotenv = new Dotenv();
 $dotenv->loadEnv(__DIR__ . '/../.env');
@@ -30,8 +31,15 @@ try {
   exit;
 }
 
+// Twig
+$loader = new FilesystemLoader(__DIR__ . '/../templates');
+$twig = new \Twig\Environment($loader, [
+  'debug' => $_ENV['APP_ENV'] === 'dev',
+  'cache' => __DIR__ . '/../var/twig'
+]);
+
 // Appeler un routeur pour lui transférer la requête
-$router = new Router();
+$router = new Router($twig);
 $router->addRoute(
   'homepage',
   '/',
@@ -54,5 +62,5 @@ try {
   echo "Page not found";
 }
 
-var_dump($router);
-var_dump($_SERVER['REQUEST_URI']);
+// var_dump($router);
+// var_dump($_SERVER['REQUEST_URI']);

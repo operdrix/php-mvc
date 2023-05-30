@@ -19,6 +19,7 @@
     "process-timeout": 0
   },
   "require": {
-    "symfony/dotenv": "^6.2"
+    "symfony/dotenv": "^6.2",
+    "twig/twig": "^3.0"
   }
 }

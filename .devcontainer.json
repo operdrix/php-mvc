@@ -2,9 +2,7 @@
   "name": "PHP - Apache",
   "image": "ghcr.io/ld-web/php-apache:8.1",
   "postStartCommand": "service apache2 start",
-  "mounts": [
-    "source=${localWorkspaceFolder},target=/var/www/html,type=bind,consistency=cached"
-  ],
+  "mounts": ["source=${localWorkspaceFolder},target=/var/www/html,type=bind,consistency=cached"],
   "customizations": {
     "vscode": {
       "settings": {
@@ -28,7 +26,8 @@
         "mtxr.sqltools-driver-mysql",
         "TabNine.tabnine-vscode",
         "bradlc.vscode-tailwindcss",
-        "narsenico.vscode-progressive-increment"
+        "narsenico.vscode-progressive-increment",
+        "whatwedo.twig"
       ]
     }
   }
