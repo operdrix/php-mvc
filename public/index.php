@@ -9,7 +9,7 @@ use App\Routing\Router;
 use Symfony\Component\Dotenv\Dotenv;
 
 $dotenv = new Dotenv();
-$dotenv->loadEnv(__DIR__ . '/../.env');
+$dotenv->load(__DIR__ . '/../.env');
 // DB
 [
   'DB_HOST'     => $host,
