@@ -25,7 +25,8 @@ $dsn = "mysql:dbname=$dbname;host=$host:$port;charset=$charset";
 
 try {
   $pdo = new PDO($dsn, $user, $password);
-  var_dump($pdo);
+  if ($_ENV['APP_ENV'] === 'debug')
+    var_dump($pdo);
 } catch (PDOException $ex) {
   echo "Erreur lors de la connexion à la base de données : " . $ex->getMessage();
   exit;
@@ -62,5 +63,7 @@ try {
   echo "Page not found";
 }
 
-// var_dump($router);
-// var_dump($_SERVER['REQUEST_URI']);
+if ($_ENV['APP_ENV'] === 'debug') {
+  var_dump($router);
+  var_dump($_SERVER['REQUEST_URI']);
+}
