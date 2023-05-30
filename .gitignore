@@ -1,4 +1,4 @@
 vendor/
 conf/*.ini/vendor
 .vscode/
-.env
+.env.local

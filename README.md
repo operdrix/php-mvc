@@ -12,9 +12,9 @@ composer dump-autoload
 
 ### DB Configuration
 
-Un fichier de configuration d'exemple se trouve dans le dossier `conf/`, nommé `db.ini.template`.
+Un fichier de variable d'environnement de test appelé `.env` est disponible.
 
-Dupliquez ce fichier et nommez-le `db.ini`, puis inscrivez vos paramètres de configuration dans ce fichier `db.ini`.
+Dupliquez ce fichier et nommez-le `.env.local`, puis inscrivez vos paramètres de configuration dans ce fichier `.env.local`.
 
 ### Démarrer l'application
 
